@@ -5,3 +5,4 @@ endif
 let g:loaded_auto_clang = 1
 
 command! ClangFormat call auto_clang#Execute()
+command! BlackFormat call auto_clang#Black()

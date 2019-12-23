@@ -11,3 +11,17 @@ function! auto_clang#Execute() abort
         echo "please set clang_bin_name"
     endif
 endfunction
+
+function! auto_clang#Black() abort
+    if exists('g:black_bin_name')
+        if expand("%:e") ==# "py"
+            w
+            let str = g:black_bin_name . " " . expand("%")
+            echo system(str)
+            e!
+            w
+        endif
+    else
+        echo "please set black_bin_name"
+    endif
+endfunction
